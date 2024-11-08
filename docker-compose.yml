@@ -1,0 +1,13 @@
+# Docker Compose file (docker-compose.yml)
+version: '3.8'
+
+services:
+  flask_app:
+    build: .
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+    command: flask run --host=0.0.0.0 --port=1313
